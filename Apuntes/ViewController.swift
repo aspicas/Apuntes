@@ -30,8 +30,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func load(_ filename: String) {
-        print(filename)
+    func load(_ name: String) {
+        //Convertir el nombre del libro al nombre del fichero
+        let filename = name.replacingOccurrences(of: " ", with: "_").lowercased()
+        
+        //Buscar dentro del paquete de recursos (bundle) el archivo de extensión pdf
+        guard let path = Bundle.main.url(forResource: filename, withExtension: "pdf") else { return }
+        
+        //Cargar el PDF usando la clase PDFDocument, con una URL
+        if let document = PDFDocument(url: path) {
+            //Asignar el PDFDocument a la PDFView de nuestra app
+            self.pdfView.document = document
+            
+            //Llamar al metodo goToFirstPage()
+            self.pdfView.goToFirstPage(nil)
+            
+            //Mostrar el nombre del fichero en la barra de título del iPad.
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                title = name
+            }
+        }
     }
 
 }
