@@ -12,6 +12,15 @@
 		E4472FB01FFD2F54006A3D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4472FAE1FFD2F54006A3D59 /* Main.storyboard */; };
 		E4472FB21FFD2F54006A3D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4472FB11FFD2F54006A3D59 /* Assets.xcassets */; };
 		E4472FB51FFD2F54006A3D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4472FB31FFD2F54006A3D59 /* LaunchScreen.storyboard */; };
+		E4472FC41FFD3368006A3D59 /* espacios_vectoriales.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FBC1FFD3366006A3D59 /* espacios_vectoriales.pdf */; };
+		E4472FC51FFD3368006A3D59 /* programacion_lineal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FBD1FFD3367006A3D59 /* programacion_lineal.pdf */; };
+		E4472FC61FFD3368006A3D59 /* vectores.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FBE1FFD3367006A3D59 /* vectores.pdf */; };
+		E4472FC71FFD3368006A3D59 /* diagonalizacion.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FBF1FFD3367006A3D59 /* diagonalizacion.pdf */; };
+		E4472FC81FFD3368006A3D59 /* matrices.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FC01FFD3367006A3D59 /* matrices.pdf */; };
+		E4472FC91FFD3368006A3D59 /* teoria_de_grafos.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FC11FFD3367006A3D59 /* teoria_de_grafos.pdf */; };
+		E4472FCA1FFD3368006A3D59 /* matematica_discreta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FC21FFD3368006A3D59 /* matematica_discreta.pdf */; };
+		E4472FCB1FFD3368006A3D59 /* aplicaciones_lineales.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FC31FFD3368006A3D59 /* aplicaciones_lineales.pdf */; };
+		E4472FCE1FFD37EF006A3D59 /* FilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4472FCD1FFD37EF006A3D59 /* FilesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		E4472FB11FFD2F54006A3D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4472FB41FFD2F54006A3D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4472FB61FFD2F54006A3D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4472FBC1FFD3366006A3D59 /* espacios_vectoriales.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = espacios_vectoriales.pdf; sourceTree = "<group>"; };
+		E4472FBD1FFD3367006A3D59 /* programacion_lineal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = programacion_lineal.pdf; sourceTree = "<group>"; };
+		E4472FBE1FFD3367006A3D59 /* vectores.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = vectores.pdf; sourceTree = "<group>"; };
+		E4472FBF1FFD3367006A3D59 /* diagonalizacion.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = diagonalizacion.pdf; sourceTree = "<group>"; };
+		E4472FC01FFD3367006A3D59 /* matrices.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = matrices.pdf; sourceTree = "<group>"; };
+		E4472FC11FFD3367006A3D59 /* teoria_de_grafos.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = teoria_de_grafos.pdf; sourceTree = "<group>"; };
+		E4472FC21FFD3368006A3D59 /* matematica_discreta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = matematica_discreta.pdf; sourceTree = "<group>"; };
+		E4472FC31FFD3368006A3D59 /* aplicaciones_lineales.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = aplicaciones_lineales.pdf; sourceTree = "<group>"; };
+		E4472FCD1FFD37EF006A3D59 /* FilesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +72,31 @@
 		E4472FA91FFD2F54006A3D59 /* Apuntes */ = {
 			isa = PBXGroup;
 			children = (
+				E4472FCC1FFD3394006A3D59 /* pdf-apuntes */,
 				E4472FAA1FFD2F54006A3D59 /* AppDelegate.swift */,
 				E4472FAC1FFD2F54006A3D59 /* ViewController.swift */,
+				E4472FCD1FFD37EF006A3D59 /* FilesTableViewController.swift */,
 				E4472FAE1FFD2F54006A3D59 /* Main.storyboard */,
 				E4472FB11FFD2F54006A3D59 /* Assets.xcassets */,
 				E4472FB31FFD2F54006A3D59 /* LaunchScreen.storyboard */,
 				E4472FB61FFD2F54006A3D59 /* Info.plist */,
 			);
 			path = Apuntes;
+			sourceTree = "<group>";
+		};
+		E4472FCC1FFD3394006A3D59 /* pdf-apuntes */ = {
+			isa = PBXGroup;
+			children = (
+				E4472FC31FFD3368006A3D59 /* aplicaciones_lineales.pdf */,
+				E4472FBF1FFD3367006A3D59 /* diagonalizacion.pdf */,
+				E4472FBC1FFD3366006A3D59 /* espacios_vectoriales.pdf */,
+				E4472FC21FFD3368006A3D59 /* matematica_discreta.pdf */,
+				E4472FC01FFD3367006A3D59 /* matrices.pdf */,
+				E4472FBD1FFD3367006A3D59 /* programacion_lineal.pdf */,
+				E4472FC11FFD3367006A3D59 /* teoria_de_grafos.pdf */,
+				E4472FBE1FFD3367006A3D59 /* vectores.pdf */,
+			);
+			path = "pdf-apuntes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +158,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4472FC91FFD3368006A3D59 /* teoria_de_grafos.pdf in Resources */,
+				E4472FCB1FFD3368006A3D59 /* aplicaciones_lineales.pdf in Resources */,
 				E4472FB51FFD2F54006A3D59 /* LaunchScreen.storyboard in Resources */,
 				E4472FB21FFD2F54006A3D59 /* Assets.xcassets in Resources */,
+				E4472FC71FFD3368006A3D59 /* diagonalizacion.pdf in Resources */,
+				E4472FC51FFD3368006A3D59 /* programacion_lineal.pdf in Resources */,
+				E4472FC81FFD3368006A3D59 /* matrices.pdf in Resources */,
+				E4472FC61FFD3368006A3D59 /* vectores.pdf in Resources */,
 				E4472FB01FFD2F54006A3D59 /* Main.storyboard in Resources */,
+				E4472FC41FFD3368006A3D59 /* espacios_vectoriales.pdf in Resources */,
+				E4472FCA1FFD3368006A3D59 /* matematica_discreta.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4472FCE1FFD37EF006A3D59 /* FilesTableViewController.swift in Sources */,
 				E4472FAD1FFD2F54006A3D59 /* ViewController.swift in Sources */,
 				E4472FAB1FFD2F54006A3D59 /* AppDelegate.swift in Sources */,
 			);
