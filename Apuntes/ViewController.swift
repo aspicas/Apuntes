@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import PDFKit
 
 class ViewController: UIViewController {
 
+    let pdfView = PDFView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //Se rellena todo el especio disponible con las constraints.
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pdfView)
+        
+        pdfView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        pdfView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        pdfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
