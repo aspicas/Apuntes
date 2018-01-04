@@ -149,6 +149,16 @@ class ViewController: UIViewController, PDFViewDelegate {
             pdfContent.append(pageContent)
         }
         
+        let pattern = "https://frogames.es[0-9a-z]"
+        let regex = try? NSRegularExpression(pattern: pattern)
+        let range = NSMakeRange(0, pdfContent.string.utf16.count)
+        
+        if let matches = regex?.matches(in: pdfContent.string, options: [], range: range) {
+            for match in matches.reversed(){
+                pdfContent.replaceCharacters(in: match.range, with: "")
+            }
+        }
+        
         self.textView.attributedText = pdfContent
     }
 }
