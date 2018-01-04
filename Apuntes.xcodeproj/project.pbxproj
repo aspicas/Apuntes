@@ -21,6 +21,7 @@
 		E4472FCA1FFD3368006A3D59 /* matematica_discreta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FC21FFD3368006A3D59 /* matematica_discreta.pdf */; };
 		E4472FCB1FFD3368006A3D59 /* aplicaciones_lineales.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4472FC31FFD3368006A3D59 /* aplicaciones_lineales.pdf */; };
 		E4472FCE1FFD37EF006A3D59 /* FilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4472FCD1FFD37EF006A3D59 /* FilesTableViewController.swift */; };
+		E4472FD01FFEAAA2006A3D59 /* WaterMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4472FCF1FFEAAA2006A3D59 /* WaterMark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E4472FC21FFD3368006A3D59 /* matematica_discreta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = matematica_discreta.pdf; sourceTree = "<group>"; };
 		E4472FC31FFD3368006A3D59 /* aplicaciones_lineales.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = aplicaciones_lineales.pdf; sourceTree = "<group>"; };
 		E4472FCD1FFD37EF006A3D59 /* FilesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewController.swift; sourceTree = "<group>"; };
+		E4472FCF1FFEAAA2006A3D59 /* WaterMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				E4472FCC1FFD3394006A3D59 /* pdf-apuntes */,
 				E4472FAA1FFD2F54006A3D59 /* AppDelegate.swift */,
+				E4472FCF1FFEAAA2006A3D59 /* WaterMark.swift */,
 				E4472FAC1FFD2F54006A3D59 /* ViewController.swift */,
 				E4472FCD1FFD37EF006A3D59 /* FilesTableViewController.swift */,
 				E4472FAE1FFD2F54006A3D59 /* Main.storyboard */,
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4472FD01FFEAAA2006A3D59 /* WaterMark.swift in Sources */,
 				E4472FCE1FFD37EF006A3D59 /* FilesTableViewController.swift in Sources */,
 				E4472FAD1FFD2F54006A3D59 /* ViewController.swift in Sources */,
 				E4472FAB1FFD2F54006A3D59 /* AppDelegate.swift in Sources */,

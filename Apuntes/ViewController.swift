@@ -10,7 +10,7 @@ import UIKit
 import PDFKit
 import SafariServices
 
-class ViewController: UIViewController, PDFViewDelegate {
+class ViewController: UIViewController, PDFViewDelegate, PDFDocumentDelegate {
 
     let pdfView = PDFView()
     let textView = UITextView()
@@ -75,6 +75,7 @@ class ViewController: UIViewController, PDFViewDelegate {
         //Cargar el PDF usando la clase PDFDocument, con una URL
         if let document = PDFDocument(url: path) {
             //Asignar el PDFDocument a la PDFView de nuestra app
+            document.delegate = self
             self.pdfView.document = document
             
             //Llamar al metodo goToFirstPage()
@@ -160,6 +161,10 @@ class ViewController: UIViewController, PDFViewDelegate {
         }
         
         self.textView.attributedText = pdfContent
+    }
+
+    func classForPage() -> AnyClass {
+        return WaterMark.self
     }
 }
 
