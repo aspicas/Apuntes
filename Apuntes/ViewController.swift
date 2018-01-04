@@ -23,6 +23,11 @@ class ViewController: UIViewController {
         pdfView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         pdfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        //Métodos de uso del PDF
+        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(promptForSearch))
+        self.navigationItem.leftBarButtonItems = [search]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +55,23 @@ class ViewController: UIViewController {
                 title = name
             }
         }
+    }
+    
+    @objc func promptForSearch() {
+        let alert = UIAlertController(title: "Buscar", message: nil, preferredStyle: .alert)
+        alert.addTextField()
+        
+        alert.addAction(UIAlertAction(title: "Buscar", style: .default, handler: { (action) in
+            guard let searchText = alert.textFields?[0].text else { return }
+            guard let match = self.pdfView.document?.findString(searchText, fromSelection: self.pdfView.highlightedSelections?.first, withOptions: .caseInsensitive) else { return }
+            self.pdfView.go(to: match)
+            
+            self.pdfView.highlightedSelections = [match]
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
     }
 
 }
