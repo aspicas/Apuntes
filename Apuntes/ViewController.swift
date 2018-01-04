@@ -26,8 +26,14 @@ class ViewController: UIViewController {
         
         //Métodos de uso del PDF
         let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(promptForSearch))
-        self.navigationItem.leftBarButtonItems = [search]
+        let share  = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareSelection))
         
+        let previus = UIBarButtonItem(barButtonSystemItem: .rewind, target: self.pdfView, action: #selector(PDFView.goToPreviousPage(_:)))
+        let next = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self.pdfView, action: #selector(PDFView.goToNextPage(_:)))
+        
+        self.navigationItem.leftBarButtonItems = [search, share, previus, next]
+        
+        self.pdfView.autoScales = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,5 +80,17 @@ class ViewController: UIViewController {
         present(alert, animated: true)
     }
 
+    @objc func shareSelection(sender: UIBarButtonItem){
+        guard let selection = self.pdfView.currentSelection?.attributedString else {
+            let alert = UIAlertController(title: "No hay nada seleccionado", message: "Selecciona un fragmento del archivo para compartir", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+            return
+        }
+        
+        let activityVC = UIActivityViewController(activityItems: [selection], applicationActivities: nil)
+        activityVC.popoverPresentationController?.barButtonItem = sender
+        present(activityVC, animated: true)
+    }
 }
 
