@@ -8,13 +8,17 @@
 
 import UIKit
 import PDFKit
+import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PDFViewDelegate {
 
     let pdfView = PDFView()
+    let textView = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Configuracion de PDF View
         //Se rellena todo el especio disponible con las constraints.
         pdfView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pdfView)
@@ -23,6 +27,18 @@ class ViewController: UIViewController {
         pdfView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         pdfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        //Configuracion de Text View
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(textView)
+        
+        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        textView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        textView.isEditable = false
+        textView.isHidden = true
+        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         
         //Métodos de uso del PDF
         let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(promptForSearch))
@@ -34,6 +50,8 @@ class ViewController: UIViewController {
         self.navigationItem.leftBarButtonItems = [search, share, previus, next]
         
         self.pdfView.autoScales = true
+        
+        self.pdfView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +109,12 @@ class ViewController: UIViewController {
         let activityVC = UIActivityViewController(activityItems: [selection], applicationActivities: nil)
         activityVC.popoverPresentationController?.barButtonItem = sender
         present(activityVC, animated: true)
+    }
+    
+    func pdfViewWillClick(onLink sender: PDFView, with url: URL) {
+        let viewController = SFSafariViewController(url: url)
+        viewController.modalPresentationStyle = .formSheet
+        present(viewController, animated: true)
     }
 }
 
