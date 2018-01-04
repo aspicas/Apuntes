@@ -50,8 +50,14 @@ class ViewController: UIViewController, PDFViewDelegate {
         self.navigationItem.leftBarButtonItems = [search, share, previus, next]
         
         self.pdfView.autoScales = true
-        
         self.pdfView.delegate = self
+        
+        let pdfMode = UISegmentedControl(items: ["PDF", "Solo Texto"])
+        pdfMode.addTarget(self, action: #selector(changePDFMode), for: .valueChanged)
+        pdfMode.selectedSegmentIndex = 0
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: pdfMode)
+        self.navigationItem.rightBarButtonItem?.width = 160
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +79,8 @@ class ViewController: UIViewController, PDFViewDelegate {
             
             //Llamar al metodo goToFirstPage()
             self.pdfView.goToFirstPage(nil)
+            
+            self.readText()
             
             //Mostrar el nombre del fichero en la barra de título del iPad.
             if UIDevice.current.userInterfaceIdiom == .pad {
@@ -115,6 +123,33 @@ class ViewController: UIViewController, PDFViewDelegate {
         let viewController = SFSafariViewController(url: url)
         viewController.modalPresentationStyle = .formSheet
         present(viewController, animated: true)
+    }
+    
+    @objc func changePDFMode(segmentedControl: UISegmentedControl) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            //Mostrar PDF
+            pdfView.isHidden = false
+            textView.isHidden = true
+        } else {
+            //Mostrar texto
+            pdfView.isHidden = true
+            textView.isHidden = false
+        }
+    }
+    
+    func readText(){
+        guard let pageCount = self.pdfView.document?.pageCount else { return }
+        let pdfContent = NSMutableAttributedString()
+        let space = NSAttributedString(string: "\n\n\n")
+        for i in 1..<pageCount {
+            guard let page = self.pdfView.document?.page(at: i) else { continue }
+            guard let pageContent = page.attributedString else { continue }
+            
+            pdfContent.append(space)
+            pdfContent.append(pageContent)
+        }
+        
+        self.textView.attributedText = pdfContent
     }
 }
 
