@@ -13,7 +13,6 @@ class WaterMark: PDFPage {
     override func draw(with box: PDFDisplayBox, to context: CGContext) {
         //Dibuja la pagina actual del pdf
         super.draw(with: box, to: context)
-        print("Drawing context...")
         //Crear la marca de agua
         let stringText: NSString = "Capitulo de muestra\n del curso" //NSString porque sera un texto con atributos
         let attributes: [NSAttributedStringKey : Any] = [
